@@ -1,4 +1,6 @@
 {
+  // 設定 Python 解釋器路徑
   "python.defaultInterpreterPath": "./venv/bin/python",
+  // 設定終端機字體
   "terminal.integrated.fontFamily": "MesloLGS NF"
 }

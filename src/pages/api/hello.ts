@@ -1,13 +1,27 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from "next";
+// import type { NextRequest } from 'next/server'
 
-type Data = {
-  name: string;
+export const config = {
+  runtime: 'edge',
+  // regions: ['iad1']  // 指定 Cloudflare region
+  // unstable_allowDynamic: [
+  //   '**/node_modules/next/dist/compiled/async_hooks/**'
+  // ]
 };
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>,
-) {
-  res.status(200).json({ name: "John Doe" });
+const handler = async (
+  // req: NextRequest
+) => {
+  // console.log('req', req);
+  return new Response(
+    JSON.stringify({ message: "Hello from Edge Runtime!" }),
+    {
+      status: 200,
+      headers: {
+        'content-type': 'application/json',
+      },
+    }
+  );
 }
+
+export default handler;

@@ -32,9 +32,16 @@ yarn-error.log*
 # vercel
 .vercel
 
+# wrangler
+.wrangler
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
 
+# venv
 /venv
+
+# pnpm-lock.yaml
+pnpm-lock.yaml
 

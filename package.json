@@ -1,12 +1,15 @@
 {
-  "name": "cloudflare-nextjs-app.node",
+  "name": "cloudflare-nextjs-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pages:build": "next build && next-on-pages",
+    "pages:preview": "wrangler pages dev .vercel/output/static --compatibility-date=2024-02-18 --compatibility-flag=nodejs_compat_v2 --port 8788",
+    "pages:deploy": "wrangler pages deploy .vercel/output/static"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
